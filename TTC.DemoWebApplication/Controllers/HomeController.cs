@@ -13,8 +13,6 @@ namespace TTC.DemoWebApplication.Controllers
    {
       public ActionResult Index()
       {
-         //ViewData["Message"] = "Welcome to ASP.NET MVC!";
-
          HomeViewData viewData = new HomeViewData();
 
          viewData.Message = "Welcome to ASP.NET MVC!";

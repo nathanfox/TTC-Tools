@@ -8,11 +8,6 @@ namespace TTC.DemoWebApplication.ViewData
    
    public class HomeViewData
    {
-      public HomeViewData()
-      {
-
-      }
-
       public string Message { get; set; }
    }
 }
