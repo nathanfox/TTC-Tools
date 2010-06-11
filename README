@@ -1,0 +1,3 @@
+TTC Tools provides a dictionary indexed by type and an optional
+instance id. The primary purpose for creating this dictionary is to pass
+values from an ASP.NET MVC controller to the view.
