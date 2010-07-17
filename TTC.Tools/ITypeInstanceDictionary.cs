@@ -8,6 +8,41 @@ namespace TTC.Tools
    public interface ITypeInstanceDictionary
    {
       /// <summary>
+      /// Used to determine if the dictionary contains an entry of type T.
+      /// </summary>
+      /// <typeparam name="T">The type of the dictionary value which is used as the key as well.</typeparam>
+      /// <returns>true if the dictionary contains a dictionary entry of type T, otherwise false.</returns>
+      bool Contains<T>();
+
+      /// <summary>
+      /// Used to determine if the dictionary contains an entry of type T with an
+      /// instance id of type int.
+      /// </summary>
+      /// <typeparam name="T">The type of the dictionary value which is used as the key as well.</typeparam>
+      /// <param name="instanceId">The integer instance id used when the dictionary entry of type T was added to the dictionary.</param>
+      /// <returns>true if the dictionary contains a dictionary entry of type T with instance id instanceId, otherwise false.</returns>
+      bool Contains<T>(int instanceId);
+
+      /// <summary>
+      /// Used to determine if the dictionary contains an entry of type T with an
+      /// instance id of type string.
+      /// </summary>
+      /// <typeparam name="T">The type of the dictionary value which is used as the key as well.</typeparam>
+      /// <param name="instanceId">The string instance id used when the dictionary entry of type T was added to the dictionary.</param>
+      /// <returns>true if the dictionary contains a dictionary entry of type T with instance id instanceId, otherwise false.</returns>
+      bool Contains<T>(string instanceId);
+
+      /// <summary>
+      /// Used to determine if the dictionary contains an entry of type T with an
+      /// instance id of type I.
+      /// </summary>
+      /// <typeparam name="T">The type of the dictionary value which is used as the key as well.</typeparam>
+      /// <typeparam name="I">The instance id of type I used when the dictionary entry of type T was added to the dictionary.</typeparam>
+      /// <param name="instanceId">The instance id of type I used when the dictionary entry of type T was added to the dictionary.</param>
+      /// <returns>true if the dictionary contains a dictionary entry of type T with instance id instanceId, otherwise false.</returns>
+      bool Contains<T, I>(I instanceId);
+
+      /// <summary>
       /// Add a dictionary entry of type T. The type will be the key for
       /// dictionary retrieval.
       /// </summary>

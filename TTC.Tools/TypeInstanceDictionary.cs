@@ -14,6 +14,33 @@ namespace TTC.Tools
 
       }
 
+      public bool Contains<T>()
+      {
+         return Contains<T, DefaultInstance>(DefaultInstance.Value);
+      }
+
+      public bool Contains<T>(int instanceId)
+      {
+         return Contains<T, int>(instanceId);
+      }
+
+      public bool Contains<T>(string instanceId)
+      {
+         return Contains<T, string>(instanceId);
+      }
+
+      public bool Contains<T, I>(I instanceId)
+      {
+         bool containsInstance = true;
+
+         if (!_instanceDictionary.ContainsKey(ComputeKey<I>(typeof(T), instanceId)))
+         {
+            containsInstance = false;
+         }
+
+         return containsInstance;
+      }
+
       public void Add<T>(T dictionaryEntry)
       {
          (this as ITypeInstanceDictionary).Add<T, DefaultInstance>(dictionaryEntry, DefaultInstance.Value);

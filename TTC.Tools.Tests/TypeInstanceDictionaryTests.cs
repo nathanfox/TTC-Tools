@@ -23,6 +23,35 @@ namespace TTC.Tools.Tests
       }
 
       [Test]
+      public void TestContainsFindsInstanceExists()
+      {
+         ITypeInstanceDictionary dict = new TypeInstanceDictionary();
+
+         dict.Add<string>("Testing");
+         Assert.IsTrue(dict.Contains<string>());
+
+         dict.Add<string>("Test with int id 1", 1);
+         Assert.IsTrue(dict.Contains<string>(1));
+
+         dict.Add<string>("Test with string id", "String1");
+         Assert.IsTrue(dict.Contains<string>("String1"));
+
+         dict.Add<string, InstanceType>("Test with enum instance id", InstanceType.Instance1);
+         Assert.IsTrue(dict.Contains<string, InstanceType>(InstanceType.Instance1));
+      }
+
+      [Test]
+      public void TestContainsFindsInstanceDoesNotExist()
+      {
+         ITypeInstanceDictionary dict = new TypeInstanceDictionary();
+
+         Assert.IsFalse(dict.Contains<string>());
+         Assert.IsFalse(dict.Contains<string>(1));
+         Assert.IsFalse(dict.Contains<string>("1"));
+         Assert.IsFalse(dict.Contains<string, InstanceType>(InstanceType.Instance1));
+      }
+
+      [Test]
       public void CheckDictionaryAddAndGetWithTypeOnly()
       {
          ITypeInstanceDictionary dict = new TypeInstanceDictionary();
