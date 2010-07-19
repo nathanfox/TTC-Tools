@@ -5,8 +5,15 @@ using System.Text;
 
 namespace TTC.DemoWebApplication.ViewData
 {
-   
-   public class HomeViewData
+
+   public interface IIndexViewData
+   {
+      string Message { get; set; }
+      string Message2 { get; set; }
+      string Message3 { get; set; }
+   }
+
+   public class IndexViewData : IIndexViewData
    {
       public string Message { get; set; }
       public string Message2 { get; set; }

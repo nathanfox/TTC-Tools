@@ -198,6 +198,24 @@ namespace TTC.Tools.Tests
          #endregion
       }
 
+      public interface IFu2
+      {
+         void Func2();
+      }
+
+      public class Fu2 : IFu2
+      {
+
+         #region IFu2 Members
+
+         void IFu2.Func2()
+         {
+            throw new NotImplementedException();
+         }
+
+         #endregion
+      }
+
       interface IFoo
       {
          void FooFunc();
@@ -273,6 +291,21 @@ namespace TTC.Tools.Tests
 
          Assert.IsNotNull(dict.Get<IFu, InstanceType>(InstanceType.Instance1));
          Assert.IsNotNull(dict.Get<IFu, InstanceType>(InstanceType.Instance2));
+      }
+
+      [Test]
+      public void TestUsageScenario5()
+      {
+         ITypeInstanceDictionary dict = new TypeInstanceDictionary();
+
+         IFu fu = new Fu();
+         dict.Add<IFu>(fu);
+
+         IFu2 fu2 = new Fu2();
+         dict.Add<IFu2>(fu2);
+
+         Assert.IsNotNull(dict.Get<IFu>());
+         Assert.IsNotNull(dict.Get<IFu2>());
       }
    }
 }

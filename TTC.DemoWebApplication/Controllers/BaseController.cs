@@ -9,17 +9,17 @@ namespace TTC.DemoWebApplication.Controllers
 {
    public class BaseController : Controller
    {
-      ITypeInstanceDictionary _typedViewData = new TypeInstanceDictionary();
+      ITypeInstanceDictionary _typeViewData = new TypeInstanceDictionary();
 
-      public ITypeInstanceDictionary TypedViewData
+      public ITypeInstanceDictionary TypeViewData
       {
          get
          {
-            return _typedViewData;
+            return _typeViewData;
          }
          set
          {
-            _typedViewData = value;
+            _typeViewData = value;
          }
       }
    }

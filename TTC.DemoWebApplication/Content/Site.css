@@ -339,3 +339,13 @@ div#title
 {
     width: 6em;
 }
+
+#default .page
+{
+   background-color: #5c87b2;
+}
+
+#about .page
+{
+   background-color: #FF0000;
+}

@@ -1,4 +1,8 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<TTC.Tools.ITypeInstanceDictionary>" %>
+
+<asp:Content ID="siteMasterInitializationContent" ContentPlaceHolderID="siteMasterInitializationContentPlaceHolder" runat="server">
+   <% Model.Get<IMasterPageViewData>().BodyId = "about"; %>
+</asp:Content>
 
 <asp:Content ID="aboutTitle" ContentPlaceHolderID="TitleContent" runat="server">
     About Us

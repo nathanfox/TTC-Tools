@@ -13,20 +13,20 @@ namespace TTC.DemoWebApplication.Controllers
    {
       public ActionResult Index()
       {
-         HomeViewData viewData = new HomeViewData();
+         IIndexViewData viewData = new IndexViewData();
 
          viewData.Message = "Welcome to ASP.NET MVC!";
          viewData.Message2 = "And welcome again!";
          viewData.Message3 = "And welcome yet again!";
 
-         TypedViewData.Add<HomeViewData>(viewData);
+         TypeViewData.Add<IIndexViewData>(viewData);
 
-         return View(TypedViewData);
+         return View(TypeViewData);
       }
 
       public ActionResult About()
       {
-         return View();
+         return View(TypeViewData);
       }
    }
 }

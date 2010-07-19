@@ -5,15 +5,15 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<% Model.Verify<HomeViewData>(); %>
-    <h2><%= Model.Get<HomeViewData>().Message %></h2>
+   <% Model.Verify<IIndexViewData>(); %>
+    <h2><%= Model.Get<IIndexViewData>().Message %></h2>
     <p>
         To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
     </p>
     <p>
-      <%= Model.Get<HomeViewData>().Message2 %>     
+      <%= Model.Get<IIndexViewData>().Message2 %>     
     </p>
     <p>
-      <%= Model.Get<HomeViewData>().Message3 %>
+      <%= Model.Get<IIndexViewData>().Message3 %>
     </p>
 </asp:Content>
