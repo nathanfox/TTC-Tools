@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TTC.Tools.Mvc;
 
 namespace TTC.DemoWebApplication.Controllers
 {
@@ -27,6 +28,11 @@ namespace TTC.DemoWebApplication.Controllers
       public ActionResult About()
       {
          return View(TypeViewData);
+      }
+
+      public ActionResult DoPermanentRedirect()
+      {
+         return new PermanentRedirectResult("/home/index");
       }
    }
 }

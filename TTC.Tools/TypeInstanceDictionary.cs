@@ -73,7 +73,7 @@ namespace TTC.Tools
          return (this as ITypeInstanceDictionary).Get<T, DefaultInstance>(DefaultInstance.Value);
       }
 
-      T ITypeInstanceDictionary.Get<T>(int instanceId)
+      public T Get<T>(int instanceId)
       {
          return (this as ITypeInstanceDictionary).Get<T, int>(instanceId);
       }
